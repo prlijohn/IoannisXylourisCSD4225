@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Summary";
+}
+@model formsWeb.Models.ViewModel.Combined;
+
+<h1>Questionnaire Result</h1>
+
+<h3> User: User</h3>
+<h3> Time Started: @Model.Forms.Start</h3>
+<h3> Time Ended: @Model.Forms.End</h3>
+<h3> Total Score: @Model.Question.total</h3>

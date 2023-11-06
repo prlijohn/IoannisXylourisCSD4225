@@ -1,0 +1,111 @@
+﻿@using System.Collections
+@{
+    ViewData["Title"] = "Details";
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    int l = 0;
+}
+<h1>@Model.Questionnaire.Name</h1>
+<h1> @Model.patient.first_name   @Model.patient.last_name</h1>
+
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Question
+            </th>
+            <th>
+                Answer
+            </th>
+            <th>
+                Score
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model.model_quest)
+        {
+            if (@obj.QuestionTypeId == 1)
+            {
+                <tr>
+                    <td>
+                        <p>@obj.Id </p>
+                    </td>
+                    <td>
+                        <p> @obj.question_text </p>
+                    </td>
+                    <td>
+                        <p>@Model.answers.model[i].text</p>
+                    </td>
+                    <td>
+                        <p>@Model.answers.model[i].score </p>
+                    </td>
+                </tr>
+                i++;
+            }
+            if (@obj.QuestionTypeId == 2)
+            {
+                <tr>
+                    <td>
+                        <p>@obj.Id </p>
+                    </td>
+                    <td>
+                        <p> @obj.question_text </p>
+                    </td>
+                    <td>
+                        <p>@Model.answers.text[j]</p>
+                    </td>
+                    <td>
+                        <p> 0 </p>
+                    </td>
+                </tr>
+                j++;
+            }
+            if (@obj.QuestionTypeId == 3)
+            {
+                <tr>
+                    <td>
+                        <p>@obj.Id </p>
+                    </td>
+                    <td>
+                        <p> @obj.question_text </p>
+                    </td>
+                    <td>
+                        <p>Image</p>
+                    </td>
+                    <td>
+                        <p>0</p>
+                    </td>
+                </tr>
+                
+            }
+
+            if (@obj.QuestionTypeId == 4)
+            {
+                <tr>
+                    <td>
+                        <p>@obj.Id </p>
+                    </td>
+                    <td>
+                        <p>@Model.answers.model_check[k].text  </p>
+                    </td>
+                    <td>
+                        <p>@Model.answers.check[k]</p>
+                    </td>
+                    <td>
+                        <p> @Model.answers.model_check[k].score</p>
+                    </td>
+                </tr>
+                k++;
+            }
+
+            
+        }
+    </tbody>
+</table>

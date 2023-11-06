@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="flex">
+    <a asp-controller="Patient" asp-action="Index" class="btn btn-primary">
+        <p>Login</p>
+    </a>
+    <a asp-controller="Patient" asp-action="Register" class="btn btn-primary">
+        <p>Register</p>
+    </a>
+
+</div>
+
+
+
+<style>
+    
+
+    .flex {
+        display: flex;
+        justify-content: center;
+    }
+
+    .flex-item + .flex-item {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .button {
+        margin-top: 15px;
+        background-color: #0066FF;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
+

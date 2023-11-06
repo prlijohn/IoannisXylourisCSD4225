@@ -1,0 +1,20 @@
+﻿@model Patient
+@{
+    ViewData["Title"] = "Login";
+}
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        
+        <div class="mb-3">
+            <label asp-for="username"></label>
+            <input asp-for="username" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="password"></label>
+            <input asp-for="password" class="form-control" type="password"/>
+            <input type="hidden" asp-route-returnUrl="@ViewBag.ReturnUrl" />
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </div>
+</form>

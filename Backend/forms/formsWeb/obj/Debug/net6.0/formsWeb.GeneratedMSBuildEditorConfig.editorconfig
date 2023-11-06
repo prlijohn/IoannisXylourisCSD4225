@@ -1,0 +1,81 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = formsWeb
+build_property.RootNamespace = formsWeb
+build_property.ProjectDir = C:\Users\PrliJohn\Desktop\formsWeb\Backend\forms\formsWeb\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = C:\Users\PrliJohn\Desktop\formsWeb\Backend\forms\formsWeb
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/PrliJohn/Desktop/formsWeb/Backend/forms/formsWeb/Views/Admin/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PrliJohn/Desktop/formsWeb/Backend/forms/formsWeb/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PrliJohn/Desktop/formsWeb/Backend/forms/formsWeb/Views/Admin/Index_Prev.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXhfUHJldi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PrliJohn/Desktop/formsWeb/Backend/forms/formsWeb/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PrliJohn/Desktop/formsWeb/Backend/forms/formsWeb/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PrliJohn/Desktop/formsWeb/Backend/forms/formsWeb/Views/Patient/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PrliJohn/Desktop/formsWeb/Backend/forms/formsWeb/Views/Patient/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PrliJohn/Desktop/formsWeb/Backend/forms/formsWeb/Views/Patient/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PrliJohn/Desktop/formsWeb/Backend/forms/formsWeb/Views/Questionnaire/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25uYWlyZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PrliJohn/Desktop/formsWeb/Backend/forms/formsWeb/Views/Questionnaire/Question.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25uYWlyZVxRdWVzdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PrliJohn/Desktop/formsWeb/Backend/forms/formsWeb/Views/Questionnaire/Summary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25uYWlyZVxTdW1tYXJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PrliJohn/Desktop/formsWeb/Backend/forms/formsWeb/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PrliJohn/Desktop/formsWeb/Backend/forms/formsWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PrliJohn/Desktop/formsWeb/Backend/forms/formsWeb/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PrliJohn/Desktop/formsWeb/Backend/forms/formsWeb/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PrliJohn/Desktop/formsWeb/Backend/forms/formsWeb/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-dsgipd5cqu

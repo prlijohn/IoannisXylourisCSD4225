@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Questions";
+}
+@model formsWeb.Models.ViewModel.Combined;
+
+<form asp-controller="Questionnaire" asp-action="Question" method="post">
+    <div class="form-label">
+    <h1>Question: @Model.Question.Id :</h1>
+
+    <h3>@Model.Question.Question</h3>
+        
+    @if (Model.Question.QuestionType == 1)
+    {
+        @foreach (var obj in Model.Question.Options)
+        {
+            <div>
+                <label asp-for="@Model.Question.Selected" class="radio">
+                    <input type="radio" asp-for="@Model.Question.Selected" value="@obj.score" id="Selected" />
+                    <span>@obj.text </span>
+                </label>
+            </div>
+        }
+        
+        <div>
+            <input type="submit" value="Submit" />
+        </div>
+    
+    }
+    @if (Model.Question.QuestionType == 2)
+    {
+        <label asp-for="@Model.Question.Text" class="text">Text:</label>
+        <input type="text" asp-for="@Model.Question.Text" id="Text" />
+        <input type="submit" value="Submit" />
+            
+    }@if (Model.Question.QuestionType == 4)
+     {
+
+        @foreach (var obj in Model.Question.OptionsCheck)
+        {
+            <div>
+                <label asp-for="@Model.Question.Checked" class="checkbox"> <span>@obj.text </span></label>
+                <input type="checkbox" asp-for="@Model.Question.Checked" id="Checked" />
+                <input type="submit" value="Submit" />
+            </div>
+
+
+        }
+    }
+    </div>
+</form>
+    @if (Model.Question.QuestionType == 3)
+            {
+        
+            
+            <form asp-controller="Questionnaire" asp-action="Question" method="post" enctype="multipart/form-data">
+            
+                //Handle photo here
+        <label asp-for="@Model.Question.ImageBytes" class="Image">Image:</label>
+                <input type="file" asp-for="@Model.Question.ImageBytes" id="Image" accept="image/*" />
+                <input type="submit" value="Submit" />
+           
+            </form>
+        }
+    
+

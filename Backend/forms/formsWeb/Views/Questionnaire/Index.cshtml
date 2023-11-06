@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "Questionnaire";
+}
+@model formsWeb.Models.ViewModel.Combined;
+
+
+<h1> Which questionnaire would you like to start?</h1>
+<form asp-controller="Questionnaire" asp-action="Question" method="post">
+    <div>
+        <label class="form-label"> Select A Questionnaire</label>
+        <select class="form-select" asp-items="Model.Questionnaire.QuestSelectList" asp-for="Questionnaire.QuestSelected">
+        </select>
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Start</button>
+    </div>
+</form>

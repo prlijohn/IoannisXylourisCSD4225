@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "Patients";
+}
+
+
+<h1>Here is the list of all questionnaires answered:</h1>
+
+@if (Model.Forms[0] != null)
+{
+
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>
+                Questionnaire
+            </th>
+            <th>
+                Start
+            </th>
+            <th>
+                Finish
+            </th>
+
+            <th>
+                More
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var obj in Model.Forms)
+        {
+            <tr>
+                <td>
+                    @Model.Questionnaires[@obj.QuestId -1].Name
+                </td>
+                <td>
+                    @obj.Start
+                </td>
+                <td>
+                    @obj.End
+                </td>
+
+                <td>
+                    <a href='/admin/Details/@obj.Id'> <button> Here </button> </a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else
+{
+<p>There are no questionnaires answered for this patient!</p>
+}
+    
+
+
+<div class="col-6 text-end">
+    <div class="text-center">
+        <a asp-controller="Questionnaire" asp-action="Index" class="btn btn-primary">
+            <p>Complete a new Questionnaire</p>
+        </a>
+    </div>
+</div>
+
+    
+     
+
+    
+    
+
+
+
+

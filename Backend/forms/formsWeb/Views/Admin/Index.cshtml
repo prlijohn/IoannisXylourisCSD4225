@@ -1,0 +1,181 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    p, select {
+        display: inline;
+    }
+}
+</style>
+
+<div id="patientSelection">
+    <p>Select Patient: </p>
+    <select id="tablePatients">
+        <option>-----------</option>
+        @foreach (var obj in Model.patients)
+        {
+            <option value="@obj.Id">@obj.last_name</option>
+        }
+    </select>
+</div>
+
+<br>
+<div>
+<p>Select Questionnaire: </p>
+<select id="tableQuestionnaires">
+        <option>-----------</option>
+    @foreach (var obj in Model.all_quests)
+    {
+        <option value="@obj.Id">@obj.Name</option>
+    }
+</select>
+</div>
+
+
+
+<div id="tablePatient"></div>
+<div id="tableQues"></div>
+
+
+
+@section Scripts {
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $('#tableQuestionnaires').change(function () {
+                var selectedId = $(this).val();
+                var idsList = @Html.Raw(Json.Serialize(Model.forms));
+                
+                var selectedInstances = idsList.filter(function (id) {
+                    return id.questId.toString() === selectedId;
+                });
+                var tab = $('#tableQues')
+                tab.empty();
+                var tables = $('#tablePatient')
+                tables.empty();
+                fill = "<br>Results:  ";
+                console.log(selectedInstances)               
+                if (selectedInstances && selectedInstances.length > 0) {
+                    
+                    $.each(selectedInstances, function (index, instance) {
+                        console.log(index);
+                        console.log(instance.expression);
+
+                        fill+= "<br><table class='table table - bordered'>" +
+                            "<thead>" +
+                            "<tr>" +
+                            "<th> Id </th>" +
+                            "<th> Patient Fullname </th> " +
+                            "<th> Questionnaire </th>" +
+                            "<th> Start </th>" +
+                            "<th> End </th>" ;
+                            $.each(instance.expression, function (index, exprInstance) {
+                                fill += "<th>";
+                                console.log(exprInstance);
+                                fill += exprInstance;
+                                fill += "</th>";
+                            });
+                            fill += "<th> More </th>"+
+                            "</tr>" +
+                            "</thead>" +
+                            "<tbody>" +
+                            "<tr>" +
+                            "<td>" + instance.id + "</td>" +
+                            "<td>" + instance.patients.first_name + " "+ instance.patients.last_name + "</td>" +
+                            "<td>" + instance.questionnaire.name + "</td>" +
+                            "<td>" + instance.start + "</td>" +
+                            "<td>" + instance.end + "</td>";
+                            $.each(instance.score, function (index, scoreInstance) {
+                                fill += "<td>";
+                            console.log(scoreInstance);
+                            fill += scoreInstance;
+                                fill += "</td>";
+                            });
+
+                        fill += "<td> <a href='/admin/Details/"+instance.id+"'> <button> Here </button> </a></td > " +
+                            "</tr>" +
+                            "</tbody>" +
+                            "</table>";
+                        
+
+                    });
+                    tables.append(fill);
+                    console.log(fill)
+                } else {
+                    tables.append($('<br>Results: <br><p></p>').text('Questionnaire has not been answered!'));
+                }
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            $('#tablePatients').change(function () {
+                var selectedId = $(this).val();                
+                var idsList = @Html.Raw(Json.Serialize(Model.forms));
+
+                var selectedInstances = idsList.filter(function (id) {
+                    return id.patients.id.toString() === selectedId;
+                });
+                var tables = $('#tableQues')
+                tables.empty();
+                var tab = $('#tablePatient')
+                tab.empty();
+                if (selectedInstances && selectedInstances.length > 0) 
+                
+                {                    
+                    fill = "<br>Results: ";
+                    $.each(selectedInstances, function (index, instance) {
+                        console.log(index);
+                        console.log(instance);
+
+                        fill += "<br> <table class='table table - bordered'>" +
+                            "<thead>" +
+                            "<tr>" +
+                            "<th> Id </th>" +
+                            "<th> Patient Fullname </th> " +
+                            "<th> Questionnaire </th>" +
+                            "<th> Start </th>" +
+                            "<th> End </th>";
+                        $.each(instance.expression, function (index, exprInstance) {
+                            fill += "<th>";
+                            console.log(exprInstance);
+                            fill += exprInstance;
+                            fill += "</th>";
+                        });
+                        fill += "<th> More </th>" + 
+                            "</tr>" +
+                            "</thead>" +
+                            "<tbody>" +
+                            "<tr>" +
+                            "<td>" + instance.id + "</td>" +
+                            "<td>" + instance.patients.first_name +" " +instance.patients.last_name+ "</td>" +
+                            "<td>" + instance.questionnaire.name + "</td>" +
+                            "<td>" + instance.start + "</td>" +
+                            "<td>" + instance.end + "</td>";
+                        $.each(instance.score, function (index, scoreInstance) {
+                            fill += "<td>";
+                            console.log(scoreInstance);
+                            fill += scoreInstance;
+                            fill += "</td>";
+                        });
+
+                        fill += "<td> <a href='/admin/Details/" + instance.id + "'> <button> Here </button> </a></td > " +
+                            "</tr>" +
+                            "</tbody>" +
+                            "</table>";
+                       
+                    });
+                    tables.append(fill);
+                } else {
+                    tables.append($('<br>Results: <br><p></p>').text('No questionnaires answered by this Patient!'));
+                }
+            });
+        });
+    </script>
+}
+
+
+
+

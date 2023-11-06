@@ -1,0 +1,127 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@foreach (var obj in Model.forms)
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Patient Id
+                </th>
+                <th>
+                    Start
+                </th>
+                <th>
+                    End
+                </th>
+
+
+                @if (obj.expression != null && obj.expression.Count > 0)
+                {
+                    @for (var i = 0; i < obj.expression.Count; i++)
+                    {
+                        <th>@obj.expression[i]</th>
+                    }
+
+                }
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @obj.Id
+                </td>
+                <td>
+                    @obj.PatientId
+                </td>
+                <td>
+                    @obj.Start
+                </td>
+                <td>
+                    @obj.End
+                </td>
+
+
+
+                @if (obj.score != null && obj.score.Count > 0)
+                {
+                    @for (var i = 0; i < obj.score.Count; i++)
+                    {
+
+                        <td>@obj.score[i]</td>
+                    }
+
+
+                }
+            </tr>
+
+
+
+        </tbody>
+    </table>
+
+    /*<form asp-controller="Admin" asp-action="Formula" method="post">
+        <input type="hidden" name="id" value="@(obj.Id)" />
+        <label for="name+@obj.Id">Enter the name of the formula:</label>
+        <input type="text" id="name+@obj.Id" name="name" />
+        <label for="formula+@obj.Id">Enter the formula:</label>
+        <input type="text" id="formula+@obj.Id" name="formula" />
+        <button type="submit">Calculate</button>
+    </form>
+                */
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Patient Id
+                </th>
+                <th>
+                    Questionnaire Id
+                </th>
+                <th>
+                    Question Id
+                </th>
+                <th>
+                    score
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var expr in Model.records)
+            {
+                @if (expr.FormId == obj.Id)
+                {
+
+                    <tr>
+                        <td>
+                            @expr.Id
+                        </td>
+                        <td>
+                            @expr.PatientId
+                        </td>
+                        <td>
+                            @expr.QuestId
+                        </td>
+                        <td>
+                            @expr.QuestionId
+                        </td>
+                        <td>
+                            @expr.score
+                        </td>
+                    </tr>
+
+                }
+            }
+        </tbody>
+    </table>
+}
